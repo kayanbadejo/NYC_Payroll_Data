@@ -20,6 +20,7 @@ The pipeline leverages a combination of tech stack tools such as Python, Postgre
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
 - [Environment Variables](#environment-variables)
+- [Appendix](#appendix)
 
 ## Overview
 The NYC Payroll dataset contains information on salaries, overtime, and other financial allocations for employees working in New York City's agencies. This Data is Collected to enhance transparency and provide 
@@ -114,4 +115,15 @@ PostgreSQL Credentials
 - `DBHost = host.docker.internal`
 - `DBPort = 5432`
 - `DBName = <your_postgres_Database_Name>`
+
+## Appendix
+### Entity Relationship Diagram - Enterprise Data Warehouse EDW
+![Entity_Relationship_Diagram_for_ EDW](Entity_Relationship_Diagram_for_EDW.png)
+
+### NYCPayroll Data Fact Table
+![NYC_Payroll_Data](NYC_Payroll_Data.png)
+
+### Analytical Query - Query from Aggregate Tables
+![Analytical_Query_ from_Agg_Table](Analytical_Query_from_Agg_Table.png)
+
 
