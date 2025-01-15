@@ -129,4 +129,6 @@ PostgreSQL Credentials
 ### Appendix IV - Airflow ETL Job
 ![Airflow_DAG_ETL_Job](Airflow_DAG_ETL_Job.png)
 
+### Appendix V - Staging Area
+![NYC_Payroll_Data_Staging_DB](NYC_Payroll_Data_Staging_DB.png)
 
