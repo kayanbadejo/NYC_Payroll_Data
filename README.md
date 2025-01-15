@@ -35,8 +35,8 @@ The data source for this pipeline is available in CSV format in the URL below fo
 Key Columns and Descriptions
 The dataset (nycpayroll_2020.csv and nycpayroll_2021.csv) contains payroll data for Fiscal year 2020 and 2012 with several important columns that are critical for analysis. Below is a summary of some key columns:
 
-- `Column Name   	                Description.`
-- `FiscalYear:	                  The fiscal year in which the payroll data was recorded.`
+- Column Name   	                Description.
+- `FiscalYear:	                 The fiscal year in which the payroll data was recorded.`
 - `PayrollNymber:                 Unique Identity for Payroll`
 - `AgencyID:                      Unique Identity for Agency`
 - `AgencyName:    	              The name of the city agency where the employee works.`
