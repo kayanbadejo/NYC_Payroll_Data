@@ -35,26 +35,26 @@ The data source for this pipeline is available in CSV format in the URL below fo
 Key Columns and Descriptions
 The dataset (nycpayroll_2020.csv and nycpayroll_2021.csv) contains payroll data for Fiscal year 2020 and 2012 with several important columns that are critical for analysis. Below is a summary of some key columns:
 
-Column Name   	                Description
-- `FiscalYear:	                 The fiscal year in which the payroll data was recorded.`
-- `PayrollNymber:                Unique Identity for Payroll`
-- `AgencyID:                     Unique Identity for Agency`
-- `AgencyName:    	             The name of the city agency where the employee works.`
-- `EmployeeID:                   Unique Identity for Employee`
-- `LastName:                     Last name of employee`
-- `FirstName:                    First name of employee`
-- `Agency Start Date:            The date when the employee joined the agency.`
-- `Work Location Borough:        The borough where the employee’s work location is situated (e.g., Manhattan, Brooklyn).`
-- `TitleCode:	                   A unique code representing the employee’s job title.`
-- `TitleDescription:             A description of the job title associated with the employee.`
-- `LeaveStatusasofJune30:    	   The leave status of the employee as of the end of the fiscal year (e.g., Active, On Leave).`
-- `BaseSalary:	                 The employee’s base annual salary, recorded in dollars.`
-- `PayBasis:            	       Indicates whether the pay is calculated on an annual, daily, or other basis (e.g., per Annum, per Day).`
-- `RegularHours:	               The number of regular hours worked by the employee during the fiscal year.`
-- `RegularGrossPaid:             The total gross pay for regular hours worked.`
-- `OTHours:	                     The number of overtime hours worked by the employee.`
-- `TotalOTPaid:                  The total amount paid for overtime hours.`
-- `TotalOtherPay:                Any additional pay, such as bonuses or differentials.`
+- `Column Name   	                Description.`
+- `FiscalYear:	                  The fiscal year in which the payroll data was recorded.`
+- `PayrollNymber:                 Unique Identity for Payroll`
+- `AgencyID:                      Unique Identity for Agency`
+- `AgencyName:    	              The name of the city agency where the employee works.`
+- `EmployeeID:                    Unique Identity for Employee`
+- `LastName:                      Last name of employee`
+- `FirstName:                     First name of employee`
+- `Agency Start Date:             The date when the employee joined the agency.`
+- `Work Location Borough:         The borough where the employee’s work location is situated (e.g., Manhattan, Brooklyn).`
+- `TitleCode:	                    A unique code representing the employee’s job title.`
+- `TitleDescription:              A description of the job title associated with the employee.`
+- `LeaveStatusasofJune30:    	    The leave status of the employee as of the end of the fiscal year (e.g., Active, On Leave).`
+- `BaseSalary:	                  The employee’s base annual salary, recorded in dollars.`
+- `PayBasis:            	        Indicates whether the pay is calculated on an annual, daily, or other basis (e.g., per Annum, per Day).`
+- `RegularHours:	                The number of regular hours worked by the employee during the fiscal year.`
+- `RegularGrossPaid:              The total gross pay for regular hours worked.`
+- `OTHours:	                      The number of overtime hours worked by the employee.`
+- `TotalOTPaid:                   The total amount paid for overtime hours.`
+- `TotalOtherPay:                 Any additional pay, such as bonuses or differentials.`
 
 The other data are:
 AgencyMaster: Master Sheet containing details of several Agencies in NYC.
