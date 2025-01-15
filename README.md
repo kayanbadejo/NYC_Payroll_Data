@@ -33,8 +33,8 @@ The data source for this pipeline is available in CSV format in the URL below fo
 
 - [Original Data source](https://data.cityofnewyork.us/widgets/k397-673e?mobile_redirect=true) 
 
-- Key Columns and Descriptions
-The dataset contains several important columns that are critical for analysis. Below is a summary of some key columns:
+Key Columns and Descriptions
+The dataset (nycpayroll_2020.csv and nycpayroll_2021.csv) contains payroll data for Fiscal year 2020 and 2012 with several important columns that are critical for analysis. Below is a summary of some key columns:
 
 Column Name   	                Description
 FiscalYear:	                    The fiscal year in which the payroll data was recorded.
@@ -57,16 +57,21 @@ OTHours:	                      The number of overtime hours worked by the employ
 TotalOTPaid:                    The total amount paid for overtime hours.
 TotalOtherPay:                	Any additional pay, such as bonuses or differentials.
 
+The other data are:
+AgencyMaster: Master Sheet containing details of several Agencies in NYC.
+EmpMaster: Master Sheet containing Employee information
+TitleMaster: Master Sheet Containing Title information
 
-The business seeks to generate aggregated data and load it in an Enterprise Data Warehouse to facilitate business analytics and informed decision-making.
+with these Datasets, the business seeks to generate aggregated data in an Enterprise Data Warehouse to facilitate business analytics and informed decision-making.
 
-The pipeline is designed to:
+This ETL pipeline is designed to:
 
-1. Extract data from the Clickhouse database using a ClickHouse Connect client instance to connect to a ClickHouse Cloud service.
-2. Store the raw data in a staging area on an on-prem PostgreSQL DBMS.
-3. Transform the data and develop aggregate tables to show the following monthly metrics (average trip count, average trip duration, average trip fare) based on business requirements.
-4. Load the aggregated data into the Production Environment (Enterprise Data Warehouse) on an on-prem PostgreSQL DBMS for analytics and querying.
-5. Orchestrate the ETL pipeline using Apache Airflow for Incremental Loading.
+1. Extract: Read CSV files containing master data and payroll data and ingest them into the Python environment(pandas for data manipulation).
+2. Data Validation: Validate the data (check for missing, duplicate or inconsistent values).
+3. Transformation: Transform the data by standardising the date formats, ensuring consistent data types and  aligning the column names.
+4. Load the transformed data into the Staging Database on an on-prem PostgreSQL DBMS 
+5. Load Data to the Production Environment (Enterprise Data Warehouse) on an on-prem PostgreSQL DBMS for analytics and querying.
+6. Orchestrate the ETL pipeline using Apache Airflow for Incremental Loading.
 
 ## Architecture
 ![modular_clickhouse_archi.png](modular_clickhouse_archi.png)
