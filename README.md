@@ -19,7 +19,6 @@ The pipeline leverages a combination of tech stack tools such as Python, Postgre
 - [Source System](#source-system)
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
-
 - [Environment Variables](#environment-variables)
 
 ## Overview
@@ -70,8 +69,8 @@ This ETL pipeline is designed to:
 2. Data Validation: Validate the data (check for missing, duplicate or inconsistent values).
 3. Transformation: Transform the data by standardising the date formats, ensuring consistent data types and  aligning the column names.
 4. Load the transformed data into the Staging Database on an on-prem PostgreSQL DBMS 
-5. Load Data to Dimension and Fact Tables in the Production Environment (Enterprise Data Warehouse) on an on-prem PostgreSQL DBMS for analytics and querying.
-6. Orchestrate the ETL pipeline using Apache Airflow for Incremental Loading.
+5. Load data from the staging area to Dimension, Fact Tables and Aggregate Tables in the Production Environment (Enterprise Data Warehouse) on an on-prem PostgreSQL DBMS for analytics and querying.
+6. Orchestrate/Automate the ETL pipeline using Apache Airflow for Incremental Loading.
 
 ## Architecture
 ### Data Model - Enterprise Data Warehouse EDW
@@ -82,10 +81,12 @@ This ETL pipeline is designed to:
 ![NYC Payroll ETL Solution Arcitecture](ETL_Solution_Arcitecture.png)
 
 
-1. **Clickhouse Database**: Source of the data.
-2. **PostgreSQL DBMS**: Staging Area.
-3. **PostgreSQL DBMS**: Enterprise Data Warehouse EDW (Data warehousing and analytics)
-4. **Apache Airflow**: Orchestrates the ETL process and manages task distribution.
+1. **Google Drive**: Source of the data.
+2. **Python Environment**: Data Extraction (Pandas Dataframe) Transformation and Load Modules 
+3. **PostgreSQL DBMS**: Staging Area for Data Staorage.
+4. **PostgreSQL DBMS**: Enterprise Data Warehouse EDW (Data warehousing and analytics)
+5. **Apache Airflow**: Set up an Airflow DAG to schedule data ingestion, transformation, and loading tasks.
+6. ** Docker**: Manages task distribution in a Containerized Environment
 
 
 ## Prerequisites
@@ -103,19 +104,14 @@ This ETL pipeline is designed to:
 To reproduce the pipeline, an environment variable file (`.env`) is required with credentials for the ETL Orchestration tool, Airflow and PostgreSQL databases. The `.env` file should have the following format:
 
 Airflow Credentials
-- `ch_host = <your_clickhouse_host>`
-- `ch_port = <your_clickhouse_port>`
-- `ch_user = <your_clickhouse_user>`
-- `ch_password = <your_clickhouse_password>`
-
-PostgreSQL Credentials
-- `pg_user = <your_postgres_user>`
-- `pg_password = <your_postgres_password>`
-- `pg_dbname = <your_postgres_dbname>`
-- `pg_port = <your_postgres_port>`
-- `pg_host = <your_postgres_host>`
-
-Airflow Credentials
 - `AIRFLOW_UID = <your_AIRFLOW_UID>`
 - `_AIRFLOW_WWW_USER_USERNAME = <your__AIRFLOW_WWW_USER_USERNAME>`
 - `__AIRFLOW_WWW_USER_PASSWORD = <your___AIRFLOW_WWW_USER_PASSWORD>`
+
+PostgreSQL Credentials
+- `DBUsername = <your_postgres_user>`
+- `DBPassword = <your_postgres_password>`
+- `DBHost = host.docker.internal`
+- `DBPort = 5432`
+- `DBName = <your_postgres_Database_Name>`
+
