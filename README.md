@@ -70,7 +70,7 @@ This ETL pipeline is designed to:
 2. Data Validation: Validate the data (check for missing, duplicate or inconsistent values).
 3. Transformation: Transform the data by standardising the date formats, ensuring consistent data types and  aligning the column names.
 4. Load the transformed data into the Staging Database on an on-prem PostgreSQL DBMS 
-5. Load Data to the Production Environment (Enterprise Data Warehouse) on an on-prem PostgreSQL DBMS for analytics and querying.
+5. Load Data to Dimension and Fact Tables in the Production Environment (Enterprise Data Warehouse) on an on-prem PostgreSQL DBMS for analytics and querying.
 6. Orchestrate the ETL pipeline using Apache Airflow for Incremental Loading.
 
 ## Architecture
