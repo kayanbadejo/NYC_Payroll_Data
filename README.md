@@ -117,13 +117,16 @@ PostgreSQL Credentials
 - `DBName = <your_postgres_Database_Name>`
 
 ## Appendix
-### Entity Relationship Diagram - Enterprise Data Warehouse EDW
+### Appendix I - Entity Relationship Diagram - Enterprise Data Warehouse EDW
 ![Entity_Relationship_Diagram_for_ EDW](Entity_Relationship_Diagram_for_EDW.png)
 
-### NYCPayroll Data Fact Table
+### Appendix II - NYCPayroll Data Fact Table
 ![NYC_Payroll_Data](NYC_Payroll_Data.png)
 
-### Analytical Query - Query from Aggregate Tables
+### Appendix III - Analytical Query - Query from Aggregate Tables
 ![Analytical_Query_ from_Agg_Table](Analytical_Query_from_Agg_Table.png)
+
+### Appendix IV - Airflow ETL Job
+![Airflow_DAG_ETL_Job](Airflow_DAG_ETL_Job.png)
 
 
