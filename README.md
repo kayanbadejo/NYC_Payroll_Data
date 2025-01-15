@@ -74,7 +74,7 @@ This ETL pipeline is designed to:
 6. Orchestrate the ETL pipeline using Apache Airflow for Incremental Loading.
 
 ## Architecture
-![modular_clickhouse_archi.png](modular_clickhouse_archi.png)
+![NYC Payroll EDW Data Model](NYC_Payroll_Data_Model.png)
 1. **Clickhouse Database**: Source of the data.
 2. **PostgreSQL DBMS**: Staging Area.
 3. **PostgreSQL DBMS**: Enterprise Data Warehouse EDW (Data warehousing and analytics)
