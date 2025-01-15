@@ -11,21 +11,54 @@ reporting and analysis. Also, to ease the analysis of key business questions, Ag
 - Annual Financial Summary
 
 
-. 
-
 The pipeline leverages a combination of tech stack tools such as Python, PostgreSQL and Apache Airflow. 
 
 ## Table of Contents
 
 - [Overview](#overview)
+- [Source System](#source-system)
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
-- [Source System](#source-system)
+
 - [Environment Variables](#environment-variables)
 
 ## Overview
-Divy Trips is a cab-hailing company in New York City. From 2009 to 2016, Divy collected individual trip data, which is large and stored in a Clickhouse database. 
-The business seeks to generate monthly aggregated data and load it in an Enterprise Data Warehouse to facilitate business analytics and informed decision-making.
+The NYC Payroll dataset contains information on salaries, overtime, and other financial allocations for employees working in New York City's agencies. This Data is Collected to enhance transparency and provide 
+insights into how public funds are allocated for payroll. 
+
+
+## Source System
+The data source for this pipeline is available in CSV format in the URL below for easy integration into the data pipeline workflow:
+- [Google Drive](https://drive.google.com/drive/folders/1AndnDfj-ChbUP5xHPdYQhG1Zw3BrEjL9)
+
+- [Original Data source](https://data.cityofnewyork.us/widgets/k397-673e?mobile_redirect=true) 
+
+- Key Columns and Descriptions
+The dataset contains several important columns that are critical for analysis. Below is a summary of some key columns:
+
+Column Name   	                Description
+FiscalYear:	                    The fiscal year in which the payroll data was recorded.
+PayrollNymber:                  Unique Identity for Payroll
+AgencyID:                       Unique Identity for Agency
+AgencyName:    	                The name of the city agency where the employee works.
+EmployeeID:                     Unique Identity for Employee
+LastName:                       Last name of employee
+FirstName:                      First name of employee
+Agency Start Date:            	The date when the employee joined the agency.
+Work Location Borough:        	The borough where the employee’s work location is situated (e.g., Manhattan, Brooklyn).
+TitleCode:	                    A unique code representing the employee’s job title.
+TitleDescription:               A description of the job title associated with the employee.
+LeaveStatusasofJune30:    	    The leave status of the employee as of the end of the fiscal year (e.g., Active, On Leave).
+BaseSalary:	                    The employee’s base annual salary, recorded in dollars.
+PayBasis:            	          Indicates whether the pay is calculated on an annual, daily, or other basis (e.g., per Annum, per Day).
+RegularHours:	                  The number of regular hours worked by the employee during the fiscal year.
+RegularGrossPaid:               The total gross pay for regular hours worked.
+OTHours:	                      The number of overtime hours worked by the employee.
+TotalOTPaid:                    The total amount paid for overtime hours.
+TotalOtherPay:                	Any additional pay, such as bonuses or differentials.
+
+
+The business seeks to generate aggregated data and load it in an Enterprise Data Warehouse to facilitate business analytics and informed decision-making.
 
 The pipeline is designed to:
 
@@ -51,10 +84,7 @@ The pipeline is designed to:
 - Apache Airflow Login Credentials
 - Python 3.9 or higher
 
-## Source System
 
-The data source for this pipeline is a ClickHouse database accessible at the following URL:
-- [ClickHouse Play](https://github.demo.trial.altinity.cloud:8443/play)
 
 ## Environment Variables
 
