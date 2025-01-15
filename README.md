@@ -86,7 +86,7 @@ This ETL pipeline is designed to:
 3. **PostgreSQL DBMS**: Staging Area for Data Staorage.
 4. **PostgreSQL DBMS**: Enterprise Data Warehouse EDW (Data warehousing and analytics)
 5. **Apache Airflow**: Set up an Airflow DAG to schedule data ingestion, transformation, and loading tasks.
-6. ** Docker**: Manages task distribution in a Containerized Environment
+6. **Docker**: Manages task distribution in a Containerized Environment
 
 
 ## Prerequisites
