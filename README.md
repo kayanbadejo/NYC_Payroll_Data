@@ -1,9 +1,9 @@
 # NYC Payroll Data ETL Pipeline
 
 
-This project provides a comprehensive Modular Data ETL Pipeline solution to extract NYC Payroll Data data from flat CSV files downloaded from Google Cloud storage to a local PC, transform the extracted data 
-and load it to a Staging Database on an on-premises PostgreSQL Server. The Transformed data from the Staging Area is then loaded into structured dimensions and fact tables in an Enterprise Data Warehouse EDW for 
-reporting and analysis. Also, aggregate tables that answer the following key business questions have been developed in the EDW:
+This project provides a comprehensive Modularized ETL Pipeline solution to extract NYC Payroll Data from flat CSV files downloaded from Google Cloud storage to a local PC, transform the extracted data 
+and load it to a Staging Database in PostgreSQL Server. The Transformed data from the Staging Area is then loaded into structured dimensions and fact tables in an Enterprise Data Warehouse EDW for 
+reporting and analysis. Also, aggregate tables have been developed in the EDW that answer key business questions such as:
 
 - how are the city's financial resources allocated?
 - how much of the city's budget is being devoted to overtime?
@@ -33,7 +33,7 @@ The data source for this pipeline is available in CSV format in the URL below fo
 - [Reference - Original Data source:](https://data.cityofnewyork.us/widgets/k397-673e?mobile_redirect=true) 
 
 Key Columns and Descriptions
-The dataset (nycpayroll_2020.csv and nycpayroll_2021.csv) contains payroll data for Fiscal year 2020 and 2012 with several important columns critical for analysis. Below is a summary of some key columns:
+The datasets 'nycpayroll_2020.csv' and 'nycpayroll_2021.csv' contain payroll data for Fiscal years 2020 and 2021 with several important columns critical for analysis. Below is a summary of some key columns:
 
 Column Name  |  Description.
 - `FiscalYear: The fiscal year in which the payroll data was recorded.`
@@ -57,9 +57,9 @@ Column Name  |  Description.
 - `TotalOtherPay: Any additional pay, such as bonuses or differentials.`
 
 The other datasets are:
-- AgencyMaster (Master Sheet containing details of several Agencies in NYC)
-- EmpMaster (Master Sheet containing Employee information)
-- TitleMaster (Master Sheet Containing Title information)
+- AgencyMaster.csv (Master Sheet containing details of several Agencies in NYC)
+- EmpMaster.csv (Master Sheet containing Employee information)
+- TitleMaster.csv (Master Sheet Containing Title information)
 
 The business seeks to generate aggregated data in an Enterprise Data Warehouse with these datasets, facilitating business analytics and informed decision-making.
 
