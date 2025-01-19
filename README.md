@@ -57,9 +57,9 @@ Column Name  |  Description.
 - `TotalOtherPay: Any additional pay, such as bonuses or differentials.`
 
 The other datasets are:
-AgencyMaster (Master Sheet containing details of several Agencies in NYC)
-EmpMaster (Master Sheet containing Employee information)
-TitleMaster (Master Sheet Containing Title information)
+- AgencyMaster (Master Sheet containing details of several Agencies in NYC)
+- EmpMaster (Master Sheet containing Employee information)
+- TitleMaster (Master Sheet Containing Title information)
 
 The business seeks to generate aggregated data in an Enterprise Data Warehouse to facilitate business analytics and informed decision-making.
 
