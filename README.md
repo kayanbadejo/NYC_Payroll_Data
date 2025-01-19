@@ -61,16 +61,16 @@ The other datasets are:
 - EmpMaster (Master Sheet containing Employee information)
 - TitleMaster (Master Sheet Containing Title information)
 
-The business seeks to generate aggregated data in an Enterprise Data Warehouse to facilitate business analytics and informed decision-making.
+The business seeks to generate aggregated data in an Enterprise Data Warehouse with these datasets, facilitating business analytics and informed decision-making.
 
 This ETL pipeline is designed to:
 
-1. Read CSV files containing master and payroll data and ingest them into the Python environment(pandas for data manipulation).
-2. Validate the data (check for missing, duplicate or inconsistent values).
-3. Transform the data by standardising the date formats, ensuring consistent data types and  aligning the column names.
-4. Load the transformed data into the Staging Database on an on-prem PostgreSQL DBMS 
-5. Load data from the staging area to Dimension, Fact Tables and Aggregate Tables in the Production Environment (Enterprise Data Warehouse) on an on-prem PostgreSQL DBMS for analytics and querying.
-6. Automate these processes for Incremental Loading using Apache Airflow.
+1. read CSV files containing master and payroll data and ingest them into the Python environment(pandas for data manipulation).
+2. validate the data (check for missing, duplicate or inconsistent values).
+3. transform the data by standardising the date formats, ensuring consistent data types and  aligning the column names.
+4. load the transformed data into the Staging Database on an on-prem PostgreSQL DBMS 
+5. load data from the staging area to Dimension, Fact Tables and Aggregate Tables in the Production Environment (Enterprise Data Warehouse) on an on-prem PostgreSQL DBMS for analytics and querying.
+6. automate these processes for Incremental Loading using Apache Airflow.
 
 ## Architecture
 ### Data Model - Enterprise Data Warehouse EDW
@@ -82,7 +82,7 @@ This ETL pipeline is designed to:
 
 
 1. **Google Drive**: Source of the data.
-2. **Python Environment**: Data Extraction (Pandas Dataframe) Transformation and Load Modules 
+2. **Python Environment**: Data Extraction (Pandas Dataframe), Transformation and Load Modules 
 3. **PostgreSQL DBMS**: Staging Area for Data Staorage.
 4. **PostgreSQL DBMS**: Enterprise Data Warehouse EDW (Data warehousing and analytics)
 5. **Apache Airflow**: Set up an Airflow DAG to schedule data ingestion, transformation, and loading tasks.
