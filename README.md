@@ -2,14 +2,13 @@
 
 
 This project provides a comprehensive Modular Data ETL Pipeline solution to extract NYC Payroll Data data from flat CSV files downloaded from Google Cloud storage to a local PC, transform the extracted data 
-and load it to a Staging Database on an on-premises PostgreSQL. The Transformed data from the Staging Area is then loaded into structured dimensions and fact tables in an Enterprise Data Warehouse EDW for 
-reporting and analysis. Also, to ease the analysis of key business questions, Aggregate tables that answer the following business questions have been developed in the EDW:
+and load it to a Staging Database on an on-premises PostgreSQL Server. The Transformed data from the Staging Area is then loaded into structured dimensions and fact tables in an Enterprise Data Warehouse EDW for 
+reporting and analysis. Also, aggregate tables that answer the following key business questions have been developed in the EDW:
 
-- How is the City's financial resources allocated?
-- How much of the City's budget is being devoted to overtime?
-- Locations with Highest Payroll Allocation?
-- Annual Financial Summary
-
+- how are the city's financial resources allocated?
+- how much of the city's budget is being devoted to overtime?
+- which Locations have the highest payroll allocation?
+  
 
 The pipeline leverages a combination of tech stack tools such as Python, PostgreSQL and Apache Airflow. 
 
@@ -23,7 +22,7 @@ The pipeline leverages a combination of tech stack tools such as Python, Postgre
 - [Appendix](#appendix)
 
 ## Overview
-The NYC Payroll dataset contains information on salaries, overtime, and other financial allocations for employees working in New York City's agencies. This Data is Collected to enhance transparency and provide 
+The NYC Payroll dataset contains information on salaries, overtime, and other financial allocations for New York City agencies employees. This Data is Collected to enhance transparency and provide 
 insights into how public funds are allocated for payroll. 
 
 
@@ -34,7 +33,7 @@ The data source for this pipeline is available in CSV format in the URL below fo
 - [Reference - Original Data source:](https://data.cityofnewyork.us/widgets/k397-673e?mobile_redirect=true) 
 
 Key Columns and Descriptions
-The dataset (nycpayroll_2020.csv and nycpayroll_2021.csv) contains payroll data for Fiscal year 2020 and 2012 with several important columns that are critical for analysis. Below is a summary of some key columns:
+The dataset (nycpayroll_2020.csv and nycpayroll_2021.csv) contains payroll data for Fiscal year 2020 and 2012 with several important columns critical for analysis. Below is a summary of some key columns:
 
 Column Name  |  Description.
 - `FiscalYear: The fiscal year in which the payroll data was recorded.`
@@ -57,21 +56,21 @@ Column Name  |  Description.
 - `TotalOTPaid: The total amount paid for overtime hours.`
 - `TotalOtherPay: Any additional pay, such as bonuses or differentials.`
 
-The other data are:
-AgencyMaster: Master Sheet containing details of several Agencies in NYC.
-EmpMaster: Master Sheet containing Employee information
-TitleMaster: Master Sheet Containing Title information
+The other datasets are:
+AgencyMaster (Master Sheet containing details of several Agencies in NYC)
+EmpMaster (Master Sheet containing Employee information)
+TitleMaster (Master Sheet Containing Title information)
 
-with these Datasets, the business seeks to generate aggregated data in an Enterprise Data Warehouse to facilitate business analytics and informed decision-making.
+The business seeks to generate aggregated data in an Enterprise Data Warehouse to facilitate business analytics and informed decision-making.
 
 This ETL pipeline is designed to:
 
-1. Extract: Read CSV files containing master data and payroll data and ingest them into the Python environment(pandas for data manipulation).
-2. Data Validation: Validate the data (check for missing, duplicate or inconsistent values).
-3. Transformation: Transform the data by standardising the date formats, ensuring consistent data types and  aligning the column names.
+1. Read CSV files containing master and payroll data and ingest them into the Python environment(pandas for data manipulation).
+2. Validate the data (check for missing, duplicate or inconsistent values).
+3. Transform the data by standardising the date formats, ensuring consistent data types and  aligning the column names.
 4. Load the transformed data into the Staging Database on an on-prem PostgreSQL DBMS 
 5. Load data from the staging area to Dimension, Fact Tables and Aggregate Tables in the Production Environment (Enterprise Data Warehouse) on an on-prem PostgreSQL DBMS for analytics and querying.
-6. Orchestrate/Automate the ETL pipeline using Apache Airflow for Incremental Loading.
+6. Automate these processes for Incremental Loading using Apache Airflow.
 
 ## Architecture
 ### Data Model - Enterprise Data Warehouse EDW
